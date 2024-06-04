@@ -1,0 +1,41 @@
+@defer (when !isLoading()) {
+<section class="px-4 pt-4 md:pt-2 justify-center text-center">
+  <!-- Anime Movies -->
+  <!-- <app-movie-tv-list
+        [title]="'Anime'"
+        [movies]="animeMovies"
+        [isAnime]="true"
+        
+        [withType]="'Anime'"
+      /> -->
+  <div class="grid grid-cols-6 gap-2">
+
+    @for (item of animeMovies; track $index) {
+    <div>
+      <app-movie-tv-card [isMovie]="false" [model]="item"></app-movie-tv-card>
+    </div>
+    }
+
+   
+
+  </div>
+
+  <button
+  type="button"
+  class="focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-red-600 hover:bg-red-700"
+  (click)="loadMoreData()"
+>
+  Load More
+</button>
+  <!-- Anime Shows -->
+  <!-- <app-movie-tv-list
+      [title]="'Anime Series '"
+      [movies]="animeSeries"
+      [isMovie]="true"
+      [withType]="'Anime Series'"
+    /> -->
+
+</section>
+} @placeholder {
+<app-spinner />
+}

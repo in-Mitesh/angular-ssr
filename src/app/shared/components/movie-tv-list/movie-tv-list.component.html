@@ -1,0 +1,41 @@
+<section>
+  @if (showTitle) {
+  <div class="flex justify-between mb-4 ">
+    <h1 class="text-3xl font-extrabold leading-none tracking-tight text-white">
+      {{ title  }}
+    </h1>
+
+
+    <div>
+
+
+      <button           [routerLink]="['/view']"
+      [queryParams]="queryParams" type="button"
+        class=" mx-auto my-auto justify-items-center  flex  text-white  bg-[#25b998]   hover:bg-gradient-to-blue shadow-md transform transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75  rounded-lg  px-2 py-1.5 ">
+        <span>More </span>
+        <svg class="w-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+
+      </button>
+      <!-- <button
+          type="button outline outline-offset-2 outline-1 hover:outline-dashed"
+          class="px-2.5 py-1.5"
+          [routerLink]="['/view']"
+          [queryParams]="queryParams"
+        >
+      
+      More
+        </button> -->
+    </div>
+  </div>
+  }
+  <swiper-container appSwiper [config]="config">
+    @for (movie of movies; track movie.id) {
+    <swiper-slide class="pb-6">
+      <app-movie-tv-card [model]="movie" [isMovie]="isMovie" />
+    </swiper-slide>
+    }
+  </swiper-container>
+</section>
