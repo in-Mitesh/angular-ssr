@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ssr": {
+    "mojmovie": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-ssr",
+            "outputPath": "dist/mojmovie",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-ssr:build:production"
+              "buildTarget": "mojmovie:build:production"
             },
             "development": {
-              "buildTarget": "angular-ssr:build:development"
+              "buildTarget": "mojmovie:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,6 +90,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              
               {
                 "glob": "**/*",
                 "input": "public"

@@ -1,6 +1,6 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
-import {ViewportScroller} from '@angular/common';
+import {isPlatformBrowser, ViewportScroller} from '@angular/common';
 import {initFlowbite} from 'flowbite';
 import {filter} from 'rxjs';
 
@@ -23,7 +23,9 @@ export class AppComponent implements OnInit {
   public title = 'mojmovie';
 
   ngOnInit(): void {
-    // initFlowbite();
+    if(isPlatformBrowser(PLATFORM_ID)){
+       initFlowbite();
+    }
     this.subscribeToRouterEvents();
   }
 

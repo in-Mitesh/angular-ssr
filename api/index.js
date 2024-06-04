@@ -1,4 +1,4 @@
-export default import('../dist/angular-ssr/server/server.mjs').then((m)=>m.app());
+export default import('../dist/mojmovie/server/server.mjs').then((m)=>m.app());
  
 
 
