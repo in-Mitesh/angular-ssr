@@ -9,7 +9,7 @@ export class SanitizeUrlPipe implements PipeTransform {
 
   sanitizer = inject(DomSanitizer);
 
-  serverList:string[] = (['https://vidsrc.xyz/embed/1','https://vidsrc.in/embed/','https://vidsrc.pm/embed/','https://vidsrc.net/embed/']); 
+  serverList:string[] = (['https://vidsrc.xyz/embed/','https://vidsrc.in/embed/','https://vidsrc.pm/embed/','https://vidsrc.net/embed/']); 
 
   transform(value: string, currentServer: number) {    
    
