@@ -1,5 +1,5 @@
 @defer (when !isLoading()) {
-  <!-- <header class="container grid place-items-center mx-auto pt-4 md:pt-2 px-2">
+<!-- <header class="container grid place-items-center mx-auto pt-4 md:pt-2 px-2">
     <ul
       aria-label="Trending movies"
       class="fade-x-in-out relative isolate -z-10 col-start-1 row-start-1 grid max-w-full gap-2 overflow-x-hidden"
@@ -117,18 +117,20 @@
       </p>
     </div>
   </header> -->
-  <section >
+<section>
 
-    <div class="relative grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 ">
-    
-      <div class=" justify-center absolute md:relative lg:relative xl:relative  text-white content-center     col-span-2 px-5  z-10">
-         <h1 class=" lg:text-6xl md:text-3xl sm:text-3xl font-extrabold leading-none tracking-tight text-[#25b998]">Wanna watch free movies & TV?</h1> 
-         <p class="text-white">
-          Find the perfect movie for any occasion – family nights, friend  gatherings
-          <!--, or quality time with kids. Ensure everyone's happiness
+  <div class="relative grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 ">
+
+    <div
+      class=" justify-center absolute md:relative lg:relative xl:relative  text-white content-center     col-span-2 px-5  z-10">
+      <h1 class=" lg:text-6xl md:text-3xl sm:text-3xl font-extrabold leading-none tracking-tight text-[#25b998]">Wanna
+        watch free movies & TV?</h1>
+      <p class="text-white">
+        Find the perfect movie for any occasion – family nights, friend gatherings
+        <!--, or quality time with kids. Ensure everyone's happiness
           during your next movie night with our great recommendations! -->
-         </p>
-         <!-- <button routerlink="trending" type="button" class=" flex m-5     text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-blue shadow-md transform transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"> 
+      </p>
+      <!-- <button routerlink="trending" type="button" class=" flex m-5     text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-blue shadow-md transform transition-transform duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"> 
         <span>Go To Trending </span>  
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -136,31 +138,29 @@
         
         </button>      -->
 
-      </div>
-      <div class="relative xs:absolute  col-span-4  fade-x-in-out text-white ">
-        <video  class="w-100 h-100 object-cover filter brightness-75" autoplay muted loop src="https://website-static.plex.tv/videos/movies_and_tv_hero_background_2023.mp4" ></video>
-      </div>   
     </div>
+    <div class="relative xs:absolute  col-span-4  fade-x-in-out text-white ">
+      <video class="w-100 h-100 object-cover filter brightness-75" autoplay muted loop
+        src="https://website-static.plex.tv/videos/movies_and_tv_hero_background_2023.mp4"></video>
+    </div>
+  </div>
 
- 
-  </section>
-  <section class=" mx-auto pt-24 md:pt-16 px-2 relative" >
-    @if (movieGenreList && movieGenreList.length > 0) {
-      @for (genre of movieGenreList; track genre.id) {
-        <div class="mb-4 md:mb-5 lg:mb-6">
-          <app-movie-tv-list
-            [title]="genre.name"
-            [movies]="genre.results"
-            [isMovie]="true"
-            [withGenre]="genre.id"
-          />
-        </div>
-      }
-    }
-  </section>
-  
+
+</section>
+<section class=" mx-auto pt-24 md:pt-16 px-2 relative">
+
+  @if (movieGenreList && movieGenreList.length > 0) {
+  <div style="margin: 2rem;">
+    <div class="sharethis-inline-share-buttons"></div>
+  </div>
+  @for (genre of movieGenreList; track genre.id) {
+  <div class="mb-4 md:mb-5 lg:mb-6">
+    <app-movie-tv-list [title]="genre.name" [movies]="genre.results" [isMovie]="true" [withGenre]="genre.id" />
+  </div>
+  }
+  }
+</section>
+
 } @placeholder {
-  <app-spinner />
+<app-spinner />
 }
-
-
